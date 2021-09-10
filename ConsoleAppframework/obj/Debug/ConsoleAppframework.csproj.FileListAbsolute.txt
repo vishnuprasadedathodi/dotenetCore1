@@ -1,0 +1,7 @@
+D:\UST\New_dotnet_project\ConsoleAppframework\obj\Debug\ConsoleAppframework.csproj.AssemblyReference.cache
+D:\UST\New_dotnet_project\ConsoleAppframework\obj\Debug\ConsoleAppframework.csproj.CoreCompileInputs.cache
+D:\UST\New_dotnet_project\ConsoleAppframework\bin\Debug\ConsoleAppframework.exe.config
+D:\UST\New_dotnet_project\ConsoleAppframework\bin\Debug\ConsoleAppframework.exe
+D:\UST\New_dotnet_project\ConsoleAppframework\bin\Debug\ConsoleAppframework.pdb
+D:\UST\New_dotnet_project\ConsoleAppframework\obj\Debug\ConsoleAppframework.exe
+D:\UST\New_dotnet_project\ConsoleAppframework\obj\Debug\ConsoleAppframework.pdb
