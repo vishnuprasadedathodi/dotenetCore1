@@ -14,7 +14,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "D:\\UST\\New_dotnet_project\\SampleWeb\\SampleWeb.csproj",
-      "projectName": "SampleWeb",
+      "projectName": "dotnetcoreassessment",
       "projectPath": "D:\\UST\\New_dotnet_project\\SampleWeb\\SampleWeb.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "D:\\UST\\New_dotnet_project\\SampleWeb\\obj\\",

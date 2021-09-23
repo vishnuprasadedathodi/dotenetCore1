@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>dotnetcoreassessment</AssemblyName>
+    <RootNamespace>dotnetcoreassessment</RootNamespace>
   </PropertyGroup>
 
 </Project>
