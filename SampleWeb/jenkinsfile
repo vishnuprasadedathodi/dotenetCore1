@@ -44,8 +44,8 @@ pipeline {
         bat "del *.zip"
         
         
-         zip zipFile: 'SampleWeb.zip',archive: true,
-        dir: 'SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'
+         zip label: 'SampleWeb.zip',
+        url: 'SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'
       }
     }
     
