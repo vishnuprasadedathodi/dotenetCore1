@@ -43,9 +43,8 @@ pipeline {
         echo "Deploying to stage environment for more tests!";
         bat "del *.zip"
         
-        
-         zip label: 'SampleWeb.zip',
-        url: 'SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'
+        bat "tar.exe -a -c -f SampleWeb.zip SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish "
+       
       }
     }
     
