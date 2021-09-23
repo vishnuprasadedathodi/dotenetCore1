@@ -1,0 +1,45 @@
+pipeline {
+  agent any
+  stages {
+    stage("Prepare") {
+      steps {
+        echo "Notify the build status";
+        //githubNotify description:"Started build" status: "PENDING"
+      }
+    }
+
+    stage('Checkout') {
+      steps {
+        echo "Checking out from Git Repo";
+    
+       git url: 'https://github.com/vishnuprasadedathodi/dotenetCore1.git',
+        branch: 'master'
+      }
+    } 
+    
+    stage('Restore packages') {
+      steps {
+        bat "dotnet restore SampleWeb"
+      }
+    }
+
+
+
+    stage('Build') {
+      steps {
+        bat "dotnet build   SampleWeb "
+        
+      }
+    }
+
+    stage('Publish') {
+      steps {
+        bat "dotnet publish  SampleWeb"
+      }
+    }
+    
+    
+
+    
+  }
+}
