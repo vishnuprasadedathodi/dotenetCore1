@@ -43,7 +43,7 @@ pipeline {
         echo "Deploying to stage environment for more tests!";
         bat "del *.zip";
         
-        7z a -tzip {SampleWeb.zip} {SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish}
+        7z a -tzip {SampleWeb.zip} {"SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish"}
       }
     }
     
