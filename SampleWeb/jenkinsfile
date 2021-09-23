@@ -41,7 +41,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "Deploying to stage environment for more tests!";
-        bat "del *.zip"
+        bat "del *.zip",
         zip "SampleWeb.zip" "SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish"
       }
     }
