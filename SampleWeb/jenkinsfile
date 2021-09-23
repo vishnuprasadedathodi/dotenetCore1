@@ -19,7 +19,7 @@ pipeline {
     
     stage('Restore packages') {
       steps {
-        bat "dotnet restore SampleWeb"
+        bat "dotnet restore SampleWeb.csproj"
       }
     }
 
