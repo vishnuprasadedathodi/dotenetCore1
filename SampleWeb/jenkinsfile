@@ -53,6 +53,7 @@ pipeline {
     steps{
     bat "copy SampleWeb.zip D:\\Deploy\\test "
    bat "D: cd Deploy\\test tar.exe -xf SampleWeb.zip"
+   powershell " Expand-Archive -LiteralPath . -DestinationPath . "
 }
 }
     
