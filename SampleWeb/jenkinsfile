@@ -52,7 +52,7 @@ pipeline {
     {
     steps{
     bat "copy SampleWeb.zip D:\\Deploy\\test "
-   bat "cd D:\\Deploy\\test tar.exe -xf SampleWeb.zip"
+   bat "D:\\Deploy\\test tar.exe -xf SampleWeb.zip"
 }
 }
     
