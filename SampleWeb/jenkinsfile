@@ -51,8 +51,8 @@ pipeline {
     stage ('Deploy')
     {
     steps{
-    
-   bat """ 'C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe'  -source:'%WORKSPACE%\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'  -dest:'D:\\Deploy\\test' """
+    bat "copy SampleWeb.zip 'D:\Deploy\test' "
+   bat "cd 'D:\Deploy\test' tar.exe -xf SampleWeb.zip"
 }
 }
     
