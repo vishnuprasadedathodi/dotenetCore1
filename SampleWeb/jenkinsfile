@@ -59,25 +59,12 @@ pipeline {
    
    Import-Module  WebAdministration
 
+  New-WebAppPool -Name dotnetcoredeploy -Force
 
-$filepath ="D:\\Deploy\\test\\SampleWeb"
-$websiteurl= "dotnetcoredeploy.com.com"
-$websitename= "dotnetcoredeploy"
+  New-Website -Name dotnetcoredeploy -Port 82 -IPAddress * -HostHeader dotnetcoredeploy.com -PhysicalPath D:\\Deploy\\test\\SampleWeb -ApplicationPool dotnetcoredeploy -Force
 
-New-WebAppPool -Name $websitename -Force
-
-New-Website -Name $websitename -Port 82 -IPAddress * -HostHeader $websiteurl -PhysicalPath $filepath -ApplicationPool $websitename -Force
-
-New-WebBinding -Name "$websitename" -IPAddress "*" -Port 82 -Protocol http
-
-Set-ItemProperty IIS:\\AppPools\\$websiteName -Name managedRuntimeVersion -Value "v4.0"
-
-   
-   
-   
-   
-   
-   """
+  New-WebBinding -Name dotnetcoredeploy -IPAddress "*" -Port 82 -Protocol http
+  """
 }
 }
     
