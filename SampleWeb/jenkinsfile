@@ -54,7 +54,7 @@ pipeline {
     bat "D: cd D:\\Deploy\\test del *.zip"
     bat "copy SampleWeb.zip D:\\Deploy\\test "
    
-   powershell " Remove-Item D:\\Deploy\\test SampleWeb Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test "
+   powershell " Remove-Item -Path D:\\Deploy\\test\\SampleWeb -Recurse -Force Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test "
 }
 }
     
