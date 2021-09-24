@@ -52,7 +52,7 @@ pipeline {
     {
     steps{
     
-   bat """ 'C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe' -verb:sync -source:'%WORKSPACE%\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'  -dest:'D:\\Deploy\\test' -"""
+   bat """ 'C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe' -verb:sync -source:'%WORKSPACE%\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'  -dest:'D:\\Deploy\\test' """
 }
 }
     
