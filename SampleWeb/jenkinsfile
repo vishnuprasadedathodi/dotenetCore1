@@ -53,7 +53,7 @@ pipeline {
     steps{
     bat "copy SampleWeb.zip D:\\Deploy\\test "
    
-   powershell " Expand-Archive D:\\Deploy\\test\\SampleWeb.zip -LiteralPath  -DestinationPath D:\\Deploy\\test "
+   powershell " Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test "
 }
 }
     
