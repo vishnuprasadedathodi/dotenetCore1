@@ -48,7 +48,7 @@ pipeline {
       }
     }
     
-    Stage ('Deploy')
+    stage ('Deploy')
     {
     steps{
     
