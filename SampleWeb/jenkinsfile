@@ -70,7 +70,7 @@ New-Website -Name $websitename -Port 82 -IPAddress * -HostHeader $websiteurl -Ph
 
 New-WebBinding -Name "$websitename" -IPAddress "*" -Port 82 -Protocol http
 
-Set-ItemProperty IIS:\AppPools\$websiteName -Name managedRuntimeVersion -Value "v4.0"
+Set-ItemProperty IIS:\\AppPools\\$websiteName -Name managedRuntimeVersion -Value "v4.0"
 
    
    
