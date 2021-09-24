@@ -51,7 +51,7 @@ pipeline {
     stage ('Deploy')
     {
     steps{
-    bat "del *.zip"
+    bat "D:cd D:\\Deploy\\test del *.zip"
     bat "copy SampleWeb.zip D:\\Deploy\\test "
    
    powershell " Remove-Item D:\\Deploy\\test SampleWeb Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test "
