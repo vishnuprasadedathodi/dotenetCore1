@@ -52,10 +52,7 @@ pipeline {
     {
     steps{
     
-   bat """ C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe
--verb:sync -source:IisApp='%WORKSPACE%\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish' 
--dest:iisapp='test',computerName='127.0.0.1/msdeploy.axd?site=test',
-authType='basic' , -enableRule:AppOffline """
+   bat """ 'C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe' -verb:sync -source:IisApp='%WORKSPACE%\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish'  -dest:iisapp='test',computerName='127.0.0.1/msdeploy.axd?site=test', authType='basic' , -enableRule:AppOffline """
 }
 }
     
