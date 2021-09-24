@@ -60,6 +60,7 @@ pipeline {
                       Import-Module  WebAdministration
                       
                       Remove-WebSite -Name dotnetcoredeploy
+                      Remove-WebAppPool -Name dotnetcoredeploy
 
                       New-WebAppPool -Name dotnetcoredeploy -Force
 
