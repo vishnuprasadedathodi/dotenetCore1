@@ -51,22 +51,24 @@ pipeline {
     stage ('Deploy')
     {
     steps{
-    bat "D: cd D:\\Deploy\\test del *.zip"
-    bat "copy SampleWeb.zip D:\\Deploy\\test "
+      bat "D: cd D:\\Deploy\\test del *.zip"
+      bat "copy SampleWeb.zip D:\\Deploy\\test "
    
-   powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
-   Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
+      powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
+                      Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
    
-   Import-Module  WebAdministration
+                      Import-Module  WebAdministration
+                      
+                      Remove-WebSite -Name dotnetcoredeploy
 
-  New-WebAppPool -Name dotnetcoredeploy -Force
+                      New-WebAppPool -Name dotnetcoredeploy -Force
 
-  New-Website -Name dotnetcoredeploy -Port 82 -IPAddress * -HostHeader dotnetcoredeploy.com -PhysicalPath D:\\Deploy\\test\\SampleWeb -ApplicationPool dotnetcoredeploy -Force
+                      New-Website -Name dotnetcoredeploy -Port 82 -IPAddress * -HostHeader dotnetcoredeploy.com -PhysicalPath D:\\Deploy\\test\\SampleWeb -ApplicationPool dotnetcoredeploy -Force
 
-  New-WebBinding -Name dotnetcoredeploy -IPAddress "*" -Port 82 -Protocol http
-  """
-}
-}
+                      New-WebBinding -Name dotnetcoredeploy -IPAddress "*" -Port 82 -Protocol http
+                       """
+         }
+    }
     
 
     
