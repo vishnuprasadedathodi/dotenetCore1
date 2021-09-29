@@ -60,7 +60,7 @@ pipeline {
       bat "copy SampleWeb.zip D:\\Deploy\\test "
       
 							
-      
+      script{
    
       powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
                       Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
@@ -89,6 +89,7 @@ pipeline {
                       New-WebBinding -Name $properties.websitename -IPAddress "*" -Port 82 -Protocol http
                       
                        """
+		       }
          }
     }
     
