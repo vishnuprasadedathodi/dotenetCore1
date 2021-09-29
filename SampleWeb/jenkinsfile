@@ -71,7 +71,7 @@ pipeline {
 
 			$properties
 
-			Write-Host "Loading properties $($properties.weburl)"
+			
 		     
 		     Import-Module  WebAdministration
                       
@@ -80,9 +80,9 @@ pipeline {
 
          		 New-WebAppPool -Name $output.websitename -Force
 
-                      New-Website -Name $output.websitename -Port 82 -IPAddress * -HostHeader $output.weburl -PhysicalPath  $output.filepath -ApplicationPool $output.websitename  -Force
+                      New-Website -Name $properties.websitename -Port 82 -IPAddress * -HostHeader $properties.weburl -PhysicalPath  $properties.filepath -ApplicationPool $properties.websitename  -Force
 
-                      New-WebBinding -Name $output.websitename -IPAddress "*" -Port 82 -Protocol http
+                      New-WebBinding -Name $properties.websitename -IPAddress "*" -Port 82 -Protocol http
                       
                        """
          }
