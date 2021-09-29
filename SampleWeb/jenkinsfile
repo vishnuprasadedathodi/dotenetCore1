@@ -54,7 +54,7 @@ pipeline {
     steps{
       bat "D: cd D:\\Deploy\\test del *.zip"
       bat "copy SampleWeb.zip D:\\Deploy\\test "
-      $output= powershell """ Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData """
+      output= powershell """ Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData """
    
       powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
                       Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
@@ -65,12 +65,12 @@ pipeline {
                       Remove-WebAppPool -Name dotnetcoredeploy
 
                    
-
+			
 		
 
                       New-WebAppPool -Name $output.websitename -Force
 
-                      New-Website -Name $output.websitename -Port 82 -IPAddress * -HostHeader $weburl -PhysicalPath  $output.filepath -ApplicationPool $output,websitename  -Force
+                      New-Website -Name $output.websitename -Port 82 -IPAddress * -HostHeader $output.weburl -PhysicalPath  $output.filepath -ApplicationPool $output.websitename  -Force
 
                       New-WebBinding -Name $output.websitename -IPAddress "*" -Port 82 -Protocol http
                       
