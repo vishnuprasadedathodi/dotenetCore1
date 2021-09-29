@@ -62,11 +62,15 @@ pipeline {
                       Remove-WebSite -Name dotnetcoredeploy
                       Remove-WebAppPool -Name dotnetcoredeploy
 
-                      New-WebAppPool -Name dotnetcoredeploy -Force
+                      $filepath="D:\\Deploy\\test\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish"
+					           $weburl="dotnetcoredeploy.com"
+					             $websitename="dotnetcoredeploy"
 
-                      New-Website -Name dotnetcoredeploy -Port 82 -IPAddress * -HostHeader dotnetcoredeploy.com -PhysicalPath D:\\Deploy\\test\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish -ApplicationPool dotnetcoredeploy -Force
+                      New-WebAppPool -Name $websitename -Force
 
-                      New-WebBinding -Name dotnetcoredeploy -IPAddress "*" -Port 82 -Protocol http
+                      New-Website -Name $websitename -Port 82 -IPAddress * -HostHeader $weburl -PhysicalPath  $filepath -ApplicationPool dotnetcoredeploy -Force
+
+                      New-WebBinding -Name $websitename -IPAddress "*" -Port 82 -Protocol http
                       
                        """
          }
