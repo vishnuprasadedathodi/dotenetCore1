@@ -1,3 +1,4 @@
+def $output= powershell """ Get-content SampleWeb\\jenkinsvariable| ConvertFrom-StringData """"
 pipeline {
   agent any
   stages {
@@ -63,7 +64,7 @@ pipeline {
                       Remove-WebAppPool -Name dotnetcoredeploy
 
                    
-$output= Get-content SampleWeb\\jenkinsvariable| ConvertFrom-StringData
+
 		
 
                       New-WebAppPool -Name $output.websitename -Force
