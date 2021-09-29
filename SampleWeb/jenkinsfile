@@ -62,9 +62,9 @@ pipeline {
                       Remove-WebSite -Name dotnetcoredeploy
                       Remove-WebAppPool -Name dotnetcoredeploy
 
-                      $filepath="D:\\Deploy\\test\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish"
-		$weburl="dotnetcoredeploy.com"
-		$websitename="dotnetcoredeploy"
+                      $filepath=D:\\Deploy\\test\\SampleWeb\\bin\\Debug\\netcoreapp3.1\\publish
+		$weburl=dotnetcoredeploy.com
+		$websitename=dotnetcoredeploy
 
                       New-WebAppPool -Name $websitename -Force
 
