@@ -1,4 +1,6 @@
-def output= powershell """ Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData """
+def output= powershell returnStdout: true, script :"""  $output: Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData
+							return $output"""
+
 pipeline {
   agent any
   stages {
