@@ -1,5 +1,4 @@
-def output= powershell returnStdout: true, script :"""  return  Get-content SampleWeb\\jenkinsvariable | ConvertFrom-StringData
-							"""
+
 
 pipeline {
   agent any
@@ -56,6 +55,8 @@ pipeline {
     steps{
       bat "D: cd D:\\Deploy\\test del *.zip"
       bat "copy SampleWeb.zip D:\\Deploy\\test "
+      def output= powershell returnStdout: true, script :"""  return  Get-content SampleWeb\\jenkinsvariable | ConvertFrom-StringData
+							"""
       
    
       powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
