@@ -54,7 +54,7 @@ pipeline {
     steps{
       bat "D: cd D:\\Deploy\\test del *.zip"
       bat "copy SampleWeb.zip D:\\Deploy\\test "
-      def $output= powershell """ Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData """
+      $output= powershell """ Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData """
    
       powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
                       Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
