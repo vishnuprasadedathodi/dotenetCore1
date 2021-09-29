@@ -66,11 +66,11 @@ pipeline {
 $output= Get-content SampleWeb\\jenkinsvariable| ConvertFrom-StringData
 		
 
-                      New-WebAppPool -Name $websitename -Force
+                      New-WebAppPool -Name $output.websitename -Force
 
-                      New-Website -Name $websitename -Port 82 -IPAddress * -HostHeader $weburl -PhysicalPath  $filepath -ApplicationPool $websitename  -Force
+                      New-Website -Name $output.websitename -Port 82 -IPAddress * -HostHeader $weburl -PhysicalPath  $output.filepath -ApplicationPool $output,websitename  -Force
 
-                      New-WebBinding -Name $websitename -IPAddress "*" -Port 82 -Protocol http
+                      New-WebBinding -Name $output.websitename -IPAddress "*" -Port 82 -Protocol http
                       
                        """
          }
