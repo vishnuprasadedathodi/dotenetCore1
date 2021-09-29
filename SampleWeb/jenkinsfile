@@ -1,4 +1,4 @@
-def output= powershell returnStdout: true, script :"""  return  Get-content SampleWeb/jenkinsvariable | ConvertFrom-StringData
+def output= powershell returnStdout: true, script :"""  return  Get-content SampleWeb\\jenkinsvariable | ConvertFrom-StringData
 							"""
 
 pipeline {
