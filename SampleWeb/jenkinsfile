@@ -61,16 +61,24 @@ pipeline {
       powershell """ Remove-Item -LiteralPath D:\\Deploy\\test\\SampleWeb -Force -Recurse  
                       Expand-Archive  -LiteralPath D:\\Deploy\\test\\SampleWeb.zip -DestinationPath D:\\Deploy\\test
    
-                      Import-Module  WebAdministration
+                     $ENV_TYPE = "dev"
+
+			$mypath = "SampleWeb"
+
+			Write-Output "Path of the script : $mypath"
+
+			$properties = ConvertFrom-StringData (Get-Content $mypath\\$ENV_TYPE.properties -Raw)
+
+			$properties
+
+			Write-Host "Loading properties $($properties.weburl)"
+		     
+		     Import-Module  WebAdministration
                       
                       Remove-WebSite -Name dotnetcoredeploy
                       Remove-WebAppPool -Name dotnetcoredeploy
 
-                   
-			
-		
-
-                      New-WebAppPool -Name $output.websitename -Force
+         		 New-WebAppPool -Name $output.websitename -Force
 
                       New-Website -Name $output.websitename -Port 82 -IPAddress * -HostHeader $output.weburl -PhysicalPath  $output.filepath -ApplicationPool $output.websitename  -Force
 
